@@ -1,5 +1,5 @@
-import ReactDOM from 'react-dom';
-import React from 'react';
+import React from 'react'
+import ReactDOMServer from "react-dom/server";
 import App from "./App";
 
 const book = {
@@ -20,7 +20,6 @@ const book = {
     }
 }
 
-ReactDOM.render(
-    <App book={book}/>,
-    document.getElementById('root')
-)
+const render = () => ReactDOMServer.renderToString(<App book={book}/>);
+
+export default render;
